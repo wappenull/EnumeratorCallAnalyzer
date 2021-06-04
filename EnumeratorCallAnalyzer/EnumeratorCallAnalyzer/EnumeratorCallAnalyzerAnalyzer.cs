@@ -65,20 +65,4 @@ namespace EnumeratorCallAnalyzer
             }
         }
     }
-
-    public class Test
-    {
-        IEnumerator CallingSite()
-        {
-            // Bare call (bad)
-            Coroutine(); // Markup to tell test that this line must trigger the analyzer
-
-            yield return Coroutine();
-        }
-
-        IEnumerator Coroutine()
-        {
-            yield return null;
-        }
-    }
 }
